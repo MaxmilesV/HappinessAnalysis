@@ -102,7 +102,13 @@ st.markdown('In this section, I suggest looking at the top 5 happiest and most u
 # In[350]:
 
 
+st.code('''happy_df.describe()
+s = buffer.getvalue()
+st.text(s)''')
+
 happy_df.describe()
+s = buffer.getvalue()
+st.text(s)
 
 
 # In[351]:
