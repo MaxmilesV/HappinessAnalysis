@@ -5,8 +5,6 @@
 
 
 import pandas as pd
-import numpy as np
-import plotly.graph_objects as go
 import plotly.express as px
 import streamlit as st
 import seaborn as sns
@@ -275,7 +273,7 @@ st.plotly_chart(fig)
 # In[366]:
 
 
-st.markdown('****')
+st.markdown('**As you can see from the graph, my hypothesis was confirmed and in this case, Social support and life expectancy at high values correlate with a high value of GDP per capita.**')
 
 
 # In[367]:
