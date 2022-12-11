@@ -25,6 +25,8 @@ warnings.simplefilter('ignore')
 happy_df_original = pd.read_csv('2022.csv', sep=',')
 happy_df = happy_df_original.copy(deep=True)
 
+st.code('''happy_df_original = pd.read_csv('2022.csv', sep=',')
+happy_df = happy_df_original.copy(deep=True)''')
 
 # In[341]:
 
@@ -182,8 +184,7 @@ st.markdown('At this stage, I\'m going to visualize the distribution of happines
 
 
 fig = px.bar(happy_df, x='Country', y='Happiness score')
-fig.show()
-
+st.plotly_chart(fig)
 
 # In[362]:
 
@@ -196,7 +197,7 @@ st.markdown('And here is a chart with a demonstration of all levels of general h
 
 fig = px.line(happy_df, x="Happiness score", y="Explained by: Perceptions of corruption",
               title='Changes in corruption level with increase of total happiness.')
-fig.show()
+st.plotly_chart(fig)
 
 
 # In[364]:
@@ -211,7 +212,7 @@ st.markdown('At this stage, it can be noted that there was no confirmation of th
 
 fig = px.scatter(happy_df, x="Explained by: Social support", y="Explained by: Healthy life expectancy",
                  color='Explained by: GDP per capita')
-fig.show()
+st.plotly_chart(fig)
 
 
 # In[366]:
@@ -255,8 +256,8 @@ happy_df_afghanistan = pd.DataFrame([[happy_df.iat[145, 6], columns[6][14:]], [h
                                     columns=['Sources', 'Names'])
 fig_afg = px.pie(happy_df_afghanistan, values='Sources', names='Names', title='Sources of Afghanistan happiness')
 
-fig_fin.show()
-fig_afg.show()
+st.plotly_chart(fig_fin)
+st.plotly_chart(fig_afg)
 
 
 # In[371]:
@@ -312,7 +313,7 @@ print("Mean value of residual: ", round(happy_df['Residual'].mean(), 2))
 print("Mean value of whisker difference: ", round(happy_df['Whisker difference'].mean(), 2))
 
 fig = px.scatter(happy_df, x="Happiness score", y="Residual", size='Whisker difference')
-fig.show()
+st.plotly_chart(fig)
 
 
 # In[377]:
