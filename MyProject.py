@@ -32,6 +32,7 @@ happy_df = happy_df_original.copy(deep=True)
 # In[341]:
 
 
+st.header("Introduction")
 st.markdown("**This project is dedicated to the analysis of a dataset containing information about the level of happiness in 146 countries.**\n"
             "**The scores are based on answers to the main life evaluation question asked in the poll. This question, known as the Cantril ladder, asks respondents to think of a ladder with the best possible life for them being a 10 and the worst possible life being a 0 and to rate their own current lives on that scale.**\n"
             "**This report has the following scales: GDP per capita, Social support, Life expectancy, Freedom, Generosity, Corruption**\n"
