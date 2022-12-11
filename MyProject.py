@@ -202,11 +202,15 @@ st.markdown('In this case, it was also necessary to deduce the maximum level of 
 
 # In[358]:
 
+st.code('''st.write("Mean freedom impact: " + str(round(happy_df['Explained by: Freedom to make life choices'].mean(), 2)))
+st.write("Median freedom impact: " + str(round(happy_df['Explained by: Freedom to make life choices'].median(), 2)))
+st.write("Freedom impact std: " + str(round(happy_df['Explained by: Freedom to make life choices'].std(), 2)))
+st.write("Maximum freedom impact: " + str(happy_df['Explained by: Freedom to make life choices'].max()))''')
 
-print("Mean freedom impact: ", round(happy_df['Explained by: Freedom to make life choices'].mean(), 2))
-print("Median freedom impact: ", round(happy_df['Explained by: Freedom to make life choices'].median(), 2))
-print("Freedom impact std: ", round(happy_df['Explained by: Freedom to make life choices'].std(), 2), "\n")
-print("Maximum freedom impact: ", happy_df['Explained by: Freedom to make life choices'].max())
+st.write("Mean freedom impact: " + str(round(happy_df['Explained by: Freedom to make life choices'].mean(), 2)))
+st.write("Median freedom impact: " + str(round(happy_df['Explained by: Freedom to make life choices'].median(), 2)))
+st.write("Freedom impact std: " + str(round(happy_df['Explained by: Freedom to make life choices'].std(), 2)))
+st.write("Maximum freedom impact: " + str(happy_df['Explained by: Freedom to make life choices'].max()))
 
 
 # In[359]:
@@ -227,6 +231,8 @@ st.markdown('At this stage, I\'m going to visualize the distribution of happines
 
 # In[361]:
 
+st.code('''fig = px.bar(happy_df, x='Country', y='Happiness score')
+st.plotly_chart(fig)''')
 
 fig = px.bar(happy_df, x='Country', y='Happiness score')
 st.plotly_chart(fig)
@@ -239,6 +245,9 @@ st.markdown('And here is a chart with a demonstration of all levels of general h
 
 # In[363]:
 
+st.code('''fig = px.line(happy_df, x="Happiness score", y="Explained by: Perceptions of corruption",
+              title='Changes in corruption level with increase of total happiness.')
+st.plotly_chart(fig)''')
 
 fig = px.line(happy_df, x="Happiness score", y="Explained by: Perceptions of corruption",
               title='Changes in corruption level with increase of total happiness.')
@@ -254,6 +263,9 @@ st.markdown('At this stage, it can be noted that there was no confirmation of th
 
 # In[365]:
 
+st.code('''fig = px.scatter(happy_df, x="Explained by: Social support", y="Explained by: Healthy life expectancy",
+                 color='Explained by: GDP per capita')
+st.plotly_chart(fig)''')
 
 fig = px.scatter(happy_df, x="Explained by: Social support", y="Explained by: Healthy life expectancy",
                  color='Explained by: GDP per capita')
@@ -282,12 +294,26 @@ st.markdown('At this stage, it is proposed to make a comparison of the happiest 
 
 # In[369]:
 
-
+st.code('''columns = list(happy_df.columns)''')
 columns = list(happy_df.columns)
 
 
 # In[370]:
 
+st.code('''happy_df_finland = pd.DataFrame([[happy_df.iat[0, 6], columns[6][14:]], [happy_df.iat[0, 7], columns[7][14:]],
+                                 [happy_df.iat[0, 8], columns[8][14:]], [happy_df.iat[0, 9], columns[9][14:]],
+                                 [happy_df.iat[0, 10], columns[10][14:]], [happy_df.iat[0, 11], columns[11][14:]]],
+                                columns=['Sources', 'Names'])
+fig_fin = px.pie(happy_df_finland, values='Sources', names='Names', title='Sources of Finland happiness')
+
+happy_df_afghanistan = pd.DataFrame([[happy_df.iat[145, 6], columns[6][14:]], [happy_df.iat[145, 7], columns[7][14:]],
+                                     [happy_df.iat[145, 8], columns[8][14:]], [happy_df.iat[145, 9], columns[9][14:]],
+                                     [happy_df.iat[145, 10], columns[10][14:]], [happy_df.iat[145, 11], columns[11][14:]]],
+                                    columns=['Sources', 'Names'])
+fig_afg = px.pie(happy_df_afghanistan, values='Sources', names='Names', title='Sources of Afghanistan happiness')
+
+st.plotly_chart(fig_fin)
+st.plotly_chart(fig_afg)''')
 
 happy_df_finland = pd.DataFrame([[happy_df.iat[0, 6], columns[6][14:]], [happy_df.iat[0, 7], columns[7][14:]],
                                  [happy_df.iat[0, 8], columns[8][14:]], [happy_df.iat[0, 9], columns[9][14:]],
@@ -314,8 +340,8 @@ st.markdown('Despite the fact that, as expected, the differences in the criteria
 # In[372]:
 
 
-sns.pairplot(happy_df[list(happy_df.columns)[6:]])
-print()
+s = sns.pairplot(happy_df[list(happy_df.columns)[6:]])
+st.pyplot(s)
 
 
 # In[373]:
@@ -371,3 +397,5 @@ st.markdown('Based on all the information I have received, I can draw several co
             ''
             'And this brings me to the end of my project work.')
 
+
+#%%
