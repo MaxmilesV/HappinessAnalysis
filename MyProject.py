@@ -159,9 +159,11 @@ st.markdown('At this stage, you can already see interesting statistics. The five
 # In[354]:
 
 
-print("Mean happiness: ", round(happy_df['Happiness score'].mean(), 2))
-print("Median happiness: ", round(happy_df['Happiness score'].median(), 2))
-print("Happiness std: ", round(happy_df['Happiness score'].std(), 2))
+st.code('''''')
+
+st.write(print("Mean happiness: ", round(happy_df['Happiness score'].mean(), 2)))
+st.write(print("Median happiness: ", round(happy_df['Happiness score'].median(), 2)))
+st.write(print("Happiness std: ", round(happy_df['Happiness score'].std(), 2)))
 
 
 # In[355]:
