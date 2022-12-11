@@ -32,14 +32,17 @@ happy_df = happy_df_original.copy(deep=True)
 # In[341]:
 
 
-st.header("Introduction")
-st.markdown('''**This project is dedicated to the analysis of a dataset containing information about the level of happiness in 146 countries.\n
-            The scores are based on answers to the main life evaluation question asked in the poll. This question, known as the Cantril ladder, asks respondents to think of a ladder with the best possible life for them being a 10 and the worst possible life being a 0 and to rate their own current lives on that scale.\n
-            This report has the following scales: GDP per capita, Social support, Life expectancy, Freedom, Generosity, Corruption\n
-            You may also notice the term dystopia. Dystopia is a fictional state, each of the scales of which are equal to the minimum values in the world. There is no country less happy than Dystopia, which makes it possible to compare states not only with each other, but also with this absolute minimum.\n
-            But in this dataset, Dystopia is also used to demonstrate unexplained factors when calculating the level of happiness in a country. The Dystopia (1.83) + residual column is responsible for this\n
-            It is also worth explaining the concepts of whisker-low and whisker-high. They are responsible for the bottom 25% of responses and the top 25% of responses, respectively.\n
-            There is also an asterisk in the names of some states. This indicates that some of the collected data on the state may not be objective enough due to the small number of respondents. However, I will not pay attention to this in my work, because I do not have a better alternative in any case.**''')
+st.markdown("**This project is dedicated to the analysis of a dataset containing information about the level of happiness in 146 countries.**\n"
+            "**The scores are based on answers to the main life evaluation question asked in the poll. This question, known as the Cantril ladder, asks respondents to think of a ladder with the best possible life for them being a 10 and the worst possible life being a 0 and to rate their own current lives on that scale.**\n"
+            "**This report has the following scales: GDP per capita, Social support, Life expectancy, Freedom, Generosity, Corruption**\n"
+            "\n"
+            "**You may also notice the term dystopia. Dystopia is a fictional state, each of the scales of which are equal to the minimum values in the world. There is no country less happy than Dystopia, which makes it possible to compare states not only with each other, but also with this absolute minimum.**\n"
+            "**But in this dataset, Dystopia is also used to demonstrate unexplained factors when calculating the level of happiness in a country. The Dystopia (1.83) + residual column is responsible for this**\n"
+            "\n"
+            "**It is also worth explaining the concepts of whisker-low and whisker-high. They are responsible for the bottom 25% of responses and the top 25% of responses, respectively.**\n"
+            "\n"
+            "**There is also an asterisk in the names of some states. This indicates that some of the collected data on the state may not be objective enough due to the small number of respondents. However, I will not pay attention to this in my work, because I do not have a better alternative in any case.**\n")
+
 
 # In[342]:
 
