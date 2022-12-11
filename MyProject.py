@@ -136,7 +136,11 @@ st.write(s)
 # In[351]:
 
 
-happy_df.head()
+st.code('''s = happy_df.head()
+st.write(s)''')
+
+s = happy_df.head()
+st.write(s)
 
 
 # In[352]:
