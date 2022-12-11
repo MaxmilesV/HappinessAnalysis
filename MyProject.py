@@ -54,7 +54,8 @@ st.markdown("To begin with, I suggest reading the information about the contents
 # In[343]:
 
 
-happy_df.info()
+st.dataframe(happy_df.info())
+#happy_df.info()
 
 
 # In[344]:
