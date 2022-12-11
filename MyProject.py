@@ -339,6 +339,8 @@ st.markdown('Despite the fact that, as expected, the differences in the criteria
 
 # In[372]:
 
+st.code('''s = sns.pairplot(happy_df[list(happy_df.columns)[6:]])
+st.pyplot(s)''')
 
 s = sns.pairplot(happy_df[list(happy_df.columns)[6:]])
 st.pyplot(s)
@@ -366,6 +368,13 @@ st.markdown('My main hypothesis is to check how objectively residents assess the
 
 # In[375]:
 
+st.code('''residual = happy_df['Dystopia (1.83) + residual'] - 1.83
+residual.rename('Residual', inplace=True)
+happy_df = pd.concat([happy_df, residual], axis=1)
+
+whisker_difference = happy_df["Whisker-high"] - happy_df['Whisker-low']
+whisker_difference.rename('Whisker difference', inplace=True)
+happy_df = pd.concat([happy_df, whisker_difference], axis=1)''')
 
 residual = happy_df['Dystopia (1.83) + residual'] - 1.83
 residual.rename('Residual', inplace=True)
@@ -378,10 +387,16 @@ happy_df = pd.concat([happy_df, whisker_difference], axis=1)
 
 # In[376]:
 
+st.code('''st.write("Mean value of happiness: " + str(round(happy_df['Happiness score'].mean(), 2)))
+st.write("Mean value of residual: " + str(round(happy_df['Residual'].mean(), 2)))
+st.write("Mean value of whisker difference: " + str(round(happy_df['Whisker difference'].mean(), 2)))
 
-print("Mean value of happiness: ", round(happy_df['Happiness score'].mean(), 2))
-print("Mean value of residual: ", round(happy_df['Residual'].mean(), 2))
-print("Mean value of whisker difference: ", round(happy_df['Whisker difference'].mean(), 2))
+fig = px.scatter(happy_df, x="Happiness score", y="Residual", size='Whisker difference')
+st.plotly_chart(fig)''')
+
+st.write("Mean value of happiness: " + str(round(happy_df['Happiness score'].mean(), 2)))
+st.write("Mean value of residual: " + str(round(happy_df['Residual'].mean(), 2)))
+st.write("Mean value of whisker difference: " + str(round(happy_df['Whisker difference'].mean(), 2)))
 
 fig = px.scatter(happy_df, x="Happiness score", y="Residual", size='Whisker difference')
 st.plotly_chart(fig)
