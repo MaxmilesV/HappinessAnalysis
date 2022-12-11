@@ -146,7 +146,11 @@ st.write(s)
 # In[352]:
 
 
-happy_df.tail()
+st.code('''s = happy_df.tail()
+st.write(s)''')
+
+s = happy_df.tail()
+st.write(s)
 
 
 # In[353]:
@@ -159,11 +163,13 @@ st.markdown('At this stage, you can already see interesting statistics. The five
 # In[354]:
 
 
-st.code('''''')
-
-st.write(("Mean happiness: " + str(round(happy_df['Happiness score'].mean(), 2))))
+st.code('''st.write(("Mean happiness: " + str(round(happy_df['Happiness score'].mean(), 2))))
 st.write(("Median happiness: " + str(round(happy_df['Happiness score'].median(), 2))))
-st.write(("Happiness std: " + str(round(happy_df['Happiness score'].std(), 2))))
+st.write(("Happiness std: " + str(round(happy_df['Happiness score'].std(), 2))))''')
+
+st.write("Mean happiness: " + str(round(happy_df['Happiness score'].mean(), 2)))
+st.write("Median happiness: " + str(round(happy_df['Happiness score'].median(), 2)))
+st.write("Happiness std: " + str(round(happy_df['Happiness score'].std(), 2)))
 
 
 # In[355]:
@@ -176,11 +182,15 @@ st.markdown('At this point, you can also draw interesting conclusions. The media
 
 # In[356]:
 
+st.code('''st.write("Mean GDP impact: " + str(round(happy_df['Explained by: GDP per capita'].mean(), 2)))
+st.write("Median GDP impact: " + str(round(happy_df['Explained by: GDP per capita'].median(), 2)))
+st.write("GDP impact std: " + str(round(happy_df['Explained by: GDP per capita'].std(), 2)))
+st.write("Maximum GDP impact: " + str(happy_df['Explained by: GDP per capita'].max()))''')
 
-print("Mean GDP impact: ", round(happy_df['Explained by: GDP per capita'].mean(), 2))
-print("Median GDP impact: ", round(happy_df['Explained by: GDP per capita'].median(), 2))
-print("GDP impact std: ", round(happy_df['Explained by: GDP per capita'].std(), 2), "\n")
-print("Maximum GDP impact: ", happy_df['Explained by: GDP per capita'].max())
+st.write("Mean GDP impact: " + str(round(happy_df['Explained by: GDP per capita'].mean(), 2)))
+st.write("Median GDP impact: " + str(round(happy_df['Explained by: GDP per capita'].median(), 2)))
+st.write("GDP impact std: " + str(round(happy_df['Explained by: GDP per capita'].std(), 2)))
+st.write("Maximum GDP impact: " + str(happy_df['Explained by: GDP per capita'].max()))
 
 
 # In[357]:
