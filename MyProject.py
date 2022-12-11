@@ -10,6 +10,7 @@ import plotly.graph_objects as go
 import plotly.express as px
 import streamlit as st
 import seaborn as sns
+import io
 
 
 # In[339]:
@@ -22,11 +23,13 @@ warnings.simplefilter('ignore')
 # In[340]:
 
 
+st.subheader('Reading dataset')
+st.code('''happy_df_original = pd.read_csv('2022.csv', sep=',')
+happy_df = happy_df_original.copy(deep=True)''')
+
 happy_df_original = pd.read_csv('2022.csv', sep=',')
 happy_df = happy_df_original.copy(deep=True)
 
-st.code('''happy_df_original = pd.read_csv('2022.csv', sep=',')
-happy_df = happy_df_original.copy(deep=True)''')
 
 # In[341]:
 
@@ -54,12 +57,21 @@ st.markdown("To begin with, I suggest reading the information about the contents
 # In[343]:
 
 
-st.dataframe(happy_df.info())
-#happy_df.info()
+st.code('''buffer = io.StringIO()
+happy_df.info(buf=buffer)
+s = buffer.getvalue()
+st.text(s)''')
+
+buffer = io.StringIO()
+happy_df.info(buf=buffer)
+s = buffer.getvalue()
+st.text(s)
 
 
 # In[344]:
 
+
+st.code('''happy_df[happy_df.isna().any(axis=1)]''')
 
 happy_df[happy_df.isna().any(axis=1)]
 
@@ -75,13 +87,25 @@ st.markdown("As you can see, there is an empty string in the dataset. This line 
 # In[346]:
 
 
+st.code('''happy_df.dropna(inplace=True)
+happy_df.reset_index(inplace=True, drop=True)
+buffer = io.StringIO()
+happy_df.info(buf=buffer)
+s = buffer.getvalue()
+st.text(s)''')
+
 happy_df.dropna(inplace=True)
 happy_df.reset_index(inplace=True, drop=True)
-happy_df.info()
+buffer = io.StringIO()
+happy_df.info(buf=buffer)
+s = buffer.getvalue()
+st.text(s)
 
 
 # In[347]:
 
+
+st.code('''happy_df''')
 
 happy_df
 
