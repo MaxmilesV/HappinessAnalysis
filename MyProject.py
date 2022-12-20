@@ -74,7 +74,7 @@ st.text(s)
 
 st.code('''happy_df[happy_df.isna().any(axis=1)]''')
 
-happy_df[happy_df.isna().any(axis=1)]
+st.write(happy_df[happy_df.isna().any(axis=1)])
 
 
 # In[345]:
@@ -110,7 +110,7 @@ st.text(s)
 
 st.code('''happy_df''')
 
-happy_df
+st.write(happy_df)
 
 
 # In[348]:
