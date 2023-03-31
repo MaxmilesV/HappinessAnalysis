@@ -8,6 +8,6 @@ The project was rated at 9.6/10, after its presentation and defense.
 
 **It can be accessed wia Streamlit or Jupyter Notebook file in repository**
 
-**Stremlit link:** https://maxmilesv-dataproject-myproject-zdyd7u.streamlit.app/
+**Stremlit link:** https://maxmilesv-dataproject-1-myproject-qlldee.streamlit.app/
 
 ### 2022, Moscow, HSE, Bachelor’s Programme DSBA
