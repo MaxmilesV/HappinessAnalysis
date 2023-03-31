@@ -430,7 +430,11 @@ st.markdown('**Based on all the information I have received, I can draw several 
             '\n'
             '**3.It is interesting to find that the mean value of the residual is zero. I believe this means that people are equally prone to exaggerate and underestimate the living conditions around them.**\n'
             '\n'
-            '**And this brings me to the end of my project work.**')
+            '**And this brings me to the end of my project work.**\n'
+            '\n'
+            '**2022, Moscow, HSE, Bachelor’s Programme DSBA.**\n'
+            '\n'
+            '**My github link: https://github.com/MaxmilesV**')
 
 
 #%%
