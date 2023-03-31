@@ -428,13 +428,7 @@ st.markdown('**Based on all the information I have received, I can draw several 
             '\n'
             '**2. I could not find a connection between the residual and whisker difference, but I managed to find that the lower the overall level of happiness in the state, the more likely it is that residents will strongly differ in opinions.**\n'
             '\n'
-            '**3.It is interesting to find that the mean value of the residual is zero. I believe this means that people are equally prone to exaggerate and underestimate the living conditions around them.**\n'
-            '\n'
-            '**And this brings me to the end of my project work.**\n'
-            '\n'
-            '**2022, Moscow, HSE, Bachelor’s Programme DSBA.**\n'
-            '\n'
-            '**My github link: https://github.com/MaxmilesV**')
+            )
 
 
 #%%
